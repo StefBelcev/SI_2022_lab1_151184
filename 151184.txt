@@ -1,0 +1,128 @@
+4. $git clone https://github.com/StefBelcev/SI_2022_lab1_151184.git SI_2022_lab1_151184 - клонирање на оддалечениот директориум локално
+cd SI_2022_lab1_151184 - влегување во директориумот
+5.notepad shopping_list.txt - додавање на 5 ставки во shopping_list.txt
+  git add shopping_list.txt - додавање на stage
+  git commit -a -m "Add 5 items to shopping list" - правење соодветен commit
+6.notepad shopping_list.txt - додавање на количината на ставките во shopping_list.txt
+  git commit -a -m "Add quantities to the items." - правење соодветен commit
+7.git branch branch1 - креирање на гранката branch1
+  git branch branch2 - креирање на гранката branch2
+8.git log - листање на документацијата
+commit 620fbcbf56d2e8247724429eb66368c8a28c89d0 (HEAD -> master, branch2, branch1)
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 15:14:16 2022 +0200
+
+    Add quantities to the items.
+
+commit 3bc9c4b86e7cf8c16484698f886e12ea3dfa23d4
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 15:09:03 2022 +0200
+
+    Add 5 items to shopping list
+
+commit 74344681280e58c00a6c713179d4e691bfe8d95a (origin/master, origin/HEAD)
+Author: StefBelcev <37218669+StefBelcev@users.noreply.github.com>
+Date:   Tue Mar 29 01:30:19 2022 +0200
+
+    Update README.md
+
+commit baddbeed110bc31e75a984cc169149d136db9e74
+Author: StefBelcev <37218669+StefBelcev@users.noreply.github.com>
+Date:   Tue Mar 29 01:29:45 2022 +0200
+9.git push origin master - соодветно правење push на секоја од гранките на оддалечениот репозиториум
+  git push origin branch1
+  git push origin branch2
+10.git checkout branch1 - префрлување на branch1 
+11.notepad shopping_list.txt - вршење на промена на shopping_list.txt
+   git commit -a -m "Change quantity of item #5" - правење add на веќе stage-ираните фајлови и правење commit
+12.git checkout master - префрлување на branch1 
+13.notepad shopping_list.txt
+   git commit -a -m "Change quantity of item #2" - вршење на промена на shopping_list.txt
+14.git push origin master - соодветно правење push на master и branch1 од гранките на оддалечениот репозиториум
+   git push origin branch1
+15.git checkout branch2 - префрлување на branch1 
+16.notepad shopping_list.txt - вршење на промена на shopping_list.txt
+   git add shopping_list.txt - додавање shopping_list.txt во stage
+   git commit -m "Modify item #4" - правење на соодветен commit
+17. git log - листање на документацијата
+commit 8e6d8dd4f4075c39903dad55dc6885854739d6e5 (HEAD -> branch2)
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 20:33:13 2022 +0200
+
+    Modify item #4
+
+commit 620fbcbf56d2e8247724429eb66368c8a28c89d0 (origin/branch2)
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 15:14:16 2022 +0200
+
+    Add quantities to the items.
+
+commit 3bc9c4b86e7cf8c16484698f886e12ea3dfa23d4
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 15:09:03 2022 +0200
+
+    Add 5 items to shopping list
+
+commit 74344681280e58c00a6c713179d4e691bfe8d95a
+Author: StefBelcev <37218669+StefBelcev@users.noreply.github.com>
+Date:   Tue Mar 29 01:30:19 2022 +0200
+
+    Update README.md
+
+commit baddbeed110bc31e75a984cc169149d136db9e74
+Author: StefBelcev <37218669+StefBelcev@users.noreply.github.com>
+Date:   Tue Mar 29 01:29:45 2022 +0200
+
+    Initial commit
+18.notepad shopping_list.txt - вршење на промена на shopping_list.txt
+   git commit -a --amend -m "Modify item #4 and add item #6" - додавање на tracked фајловите во stage и пребришување на стариот commit со помош на командата commit --amend со соодветната порака
+19.git log - листање на документацијата
+commit ef1ea044e9d0e3b3e4d726f5b2b414a6b7123066 (HEAD -> branch2)
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 20:33:13 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit 620fbcbf56d2e8247724429eb66368c8a28c89d0 (origin/branch2)
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 15:14:16 2022 +0200
+
+    Add quantities to the items.
+
+commit 3bc9c4b86e7cf8c16484698f886e12ea3dfa23d4
+Author: unknown <stefcobelcev@hotmail.com>
+Date:   Thu Apr 7 15:09:03 2022 +0200
+
+    Add 5 items to shopping list
+
+commit 74344681280e58c00a6c713179d4e691bfe8d95a
+Author: StefBelcev <37218669+StefBelcev@users.noreply.github.com>
+Date:   Tue Mar 29 01:30:19 2022 +0200
+
+    Update README.md
+
+commit baddbeed110bc31e75a984cc169149d136db9e74
+Author: StefBelcev <37218669+StefBelcev@users.noreply.github.com>
+Date:   Tue Mar 29 01:29:45 2022 +0200
+
+    Initial commit
+
+20.git checkout master - префрлање на гранката master
+   git merge branch1 - спојување на гранката branch1 кон master
+Auto-merging shopping_list.txt
+Merge made by the 'ort' strategy.
+shopping_list.txt | 2 +-
+1 file changed, 1 insertion(+), 1 deletion(-)\
+Дополнително соодветно е додаден и merge message поради обостраните commits на двете гранки и поради recursive merge strategy
+21.git merge branch2 - спојување на гранката branch2 кон master
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+   notepad shopping_list.txt - решање на конфликтните линии
+   git add shopping_list.txt - додавање shopping_list.txt на stage
+   git commit -m "Solve merge conflict" - commit дека е решен конфликтот
+22.git add 151184.txt - додавање во stage
+   git commit -a -m "Add docs" - правење на соодветен commit 
+23.git push origin master - соодветно правење push на master и branch1 од гранките на оддалечениот репозиториум
+   git push origin branch1
+   git push origin branch2
